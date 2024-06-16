@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Main {
+public class BubbleSort {
     public static void main(String[] args) {
         int[] arr = {5, 3, 8, 4, 6, 3, 2, 1, 11, 23, 22, 14455, 45, 2};
         bubbleSort(arr);
@@ -9,14 +9,17 @@ public class Main {
 
     private static void bubbleSort(int[] arr) {
         int tamanho = arr.length;
+        int flag = 0;
         for (int v = 0; v < tamanho; v++) {
             for (int i = 0; i < tamanho - 1; i++) {
                 if (arr[i] > arr[i + 1]) {
                     int aux = arr[i];
                     arr[i] = arr[i + 1];
                     arr[i + 1] = aux;
+                    flag = 1;
                 }
             }
+            if (flag == 0) return;
         }
 
     }
